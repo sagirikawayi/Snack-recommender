@@ -145,22 +145,32 @@ if st.button("🚀 Run AI Search", type="primary"):
             for i in range(k):
                 orig_idx = indices[0][i]
                 row = df.iloc[orig_idx]
-
-                # 重新加入距离和得分的计算
                 dist = distances[0][i]
                 match_score = max(0, (1 - dist) * 100)
 
                 with st.container():
                     st.markdown(f"### 🏆 Rank {i + 1}: {row['food_name']}")
                     cols = st.columns(3)
-                    for idx, feat in enumerate(active_features):
-                        u = "mg" if 'mg' in feat else "g"
-                        cols[idx % 3].metric(feat.replace('_g', '').title(), f"{row[feat]}{u}")
 
-                    # 恢复透视眼开关逻辑与进度条显示
+                    for idx, feat in enumerate(active_features):
+                        # 1. 标题美化：去除下划线、去除单位后缀、首字母大写
+                        clean_title = feat.replace('_g', '').replace('_mg', '').replace('_Mg', '').replace('_',
+                                                                                                           ' ').title()
+
+                        # 2. 单位动态判定
+                        if 'calories' in feat.lower():
+                            u = " kcal"
+                        elif 'sodium' in feat.lower():
+                            u = " mg"
+                        else:
+                            u = " g"
+
+                        # 3. 渲染指标
+                        cols[idx % 3].metric(clean_title, f"{row[feat]}{u}")
+
+                    # 算法透视眼逻辑保持不变...
                     if show_math:
                         st.info(f"**Euclidean Distance:** `{dist:.4f}` | **Match Confidence:** `{match_score:.1f}%`")
                     else:
                         st.progress(int(match_score))
-
                     st.markdown("---")
