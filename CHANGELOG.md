@@ -71,4 +71,8 @@ Data integration for healthy_foods_database.csv.
 
 * **Restored Match Metrics**: Fixed a logic break in the results loop where the `match_score` was failing to render, restoring the visibility of match percentages and progress bars.
 
-* **Toggle Responsiveness**: Corrected the conditional rendering block for `show_math` to ensure real-time UI updates without requiring a page refresh.
+* **Toggle Responsiveness**: Corrected the conditional rendering block for `show_math` to ensure real-time UI updates without requiring a page refresh.*
+*
+* **UI/UX Polishing**: 
+    * Refined nutrient titles by removing underscores (e.g., `Sodium_Mg` → `Sodium`) and implementing automatic title casing for a cleaner professional look.
+    * Corrected metric unit logic: Calories are now accurately labeled as `kcal`, while Sodium maintains `mg` and macronutrients use `g`.
