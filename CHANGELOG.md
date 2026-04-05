@@ -76,3 +76,39 @@ Data integration for healthy_foods_database.csv.
 * **UI/UX Polishing**: 
     * Refined nutrient titles by removing underscores (e.g., `Sodium_Mg` → `Sodium`) and implementing automatic title casing for a cleaner professional look.
     * Corrected metric unit logic: Calories are now accurately labeled as `kcal`, while Sodium maintains `mg` and macronutrients use `g`.
+
+
+# 🚀 AI Nutritional Navigator Changelog
+
+## [v2.1.0] - 2026-04-05
+
+### 🌟 Release Highlights
+This milestone update introduces a **Modular Navigation System** and an **Algorithmic Transparency Panel**, significantly elevating the application's interactive performance for professional data analysis scenarios.
+
+---
+
+### 🛠️ New Features
+* **🧭 Modular Navigation Hub**
+    * Integrated a three-tier sidebar menu: `Main Dashboard`, `AI Control Panel`, and `Scientific Standards`.
+    * Achieved UI logic decoupling, allowing users to switch between task execution and deep parameter tuning seamlessly.
+* **🧪 Algorithm "X-Ray" Vision**
+    * Added a toggle in the Control Panel to expose real-time **Euclidean Distance** metrics and **Match Confidence (%)** calculated by the KNN engine.
+* **🏥 Data Health Status Dashboard**
+    * Automated dataset self-check functionality, displaying total sample counts, null-cell audits, and active feature dimensionality (e.g., 6D Vector Space).
+
+### 🎨 UI/UX Enhancements
+* **🖱️ Interaction Fixes**: Implemented a low-level CSS patch to resolve a visual bug where the cursor defaulted to "text input" over the module selector.
+* **📱 Responsive Control Sync**: Refined the bi-directional synchronization between Sliders and Number Inputs for precision targeting across devices.
+* **💎 Unified Visual Language**: Adopted a "Premium Grey-Blue" color palette with smooth hover transitions on `st.metric` cards to enhance the "High-Tech" feel.
+
+### 📊 Algorithmic & Standard Updates
+* **📈 Dynamic Top-K Adjustment**: Users can now scale recommendations between 1 and 8 items to balance between "Precision Search" and "Broad Discovery."
+* **🔍 Regulatory Standard Reinforcement**:
+    * **GB 28050**: Polished the high-protein claim logic based on China’s national food safety standards.
+    * **FSA Traffic Lights**: Optimized the Red/Amber/Green risk assessment for Fats, Sugars, and Sodium based on UK FSA guidelines.
+
+### 🔧 Maintenance & Stability
+* **Robust Data Loading**: Enhanced error handling and alerts for missing or corrupted `healthy_foods_database.csv` files.
+* **Cache Management**: Improved `@st.cache_data` logic with a "One-Click Reset" to clear system memory.
+
+---
